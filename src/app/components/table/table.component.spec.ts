@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClient, HttpHandler } from "@angular/common/http";
-
+import { HttpClientTestingModule} from '@angular/common/http/testing';
+import { RouterTestingModule } from "@angular/router/testing";
 import { TableComponent } from './table.component';
-import { Router } from '@angular/router';
+
 
 describe('TableComponent', () => {
   let component: TableComponent;
@@ -11,7 +11,7 @@ describe('TableComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ TableComponent ],
-      providers:[HttpClient,HttpHandler, Router]
+      imports:[HttpClientTestingModule,RouterTestingModule]
     })
     .compileComponents();
   }));

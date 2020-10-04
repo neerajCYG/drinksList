@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FiltersListService } from 'src/app/service/filters-list.service';
+import { FiltersListService } from 'src/app/services/filters-list.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
 @Component({
   selector: 'app-table',
@@ -57,7 +57,7 @@ filteredResult:Number=0;
       this.spinner.showSpinner();
       this.default="Id"
       let newitem=[]
-      if(this.alldrinks.length>1){
+      if(this.alldrinks.length>0){
         this.alldrinks.forEach(item=>{
 
 
@@ -83,7 +83,7 @@ filteredResult:Number=0;
       this.spinner.showSpinner();
       this.default="Name"
       let newitem=[]
-      if(this.alldrinks.length>1){
+      if(this.alldrinks.length>0){
       this.alldrinks.forEach(item=>{
 
 

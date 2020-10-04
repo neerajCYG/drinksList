@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FiltersListService } from 'src/app/service/filters-list.service';
+import { FiltersListService } from 'src/app/services/filters-list.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
 @Component({
   selector: 'app-filters',

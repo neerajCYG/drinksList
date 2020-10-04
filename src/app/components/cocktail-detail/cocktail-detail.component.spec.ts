@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClient, HttpHandler } from "@angular/common/http";
 import { HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 
 import { CocktailDetailComponent } from './cocktail-detail.component';
@@ -11,7 +10,7 @@ describe('CocktailDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CocktailDetailComponent ],
-      imports:[HttpClient,HttpHandler,HttpClientTestingModule]
+      imports:[HttpClientTestingModule]
 
 
     })
