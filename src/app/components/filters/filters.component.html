@@ -1,0 +1,39 @@
+<div class="container-fluid">
+
+  <div class="row" style="margin-top: 34px;" *ngFor="let filter of filters.allFilters;let i=index">
+       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
+        <div class="row" style="flex-wrap: unset;">
+          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2" >
+            <a *ngIf="!filter.expanded" (click)="expandOptions(i)"  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <i  class="fa fa-plus" ></i>
+            </a>
+            <a *ngIf="filter.expanded" (click)="expandOptions(i)"  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <i  class="fa fa-minus"></i>
+            </a>
+          </div>
+          <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
+            <p style="cursor:pointer" (click)="expandOptions(i)">{{filter.filterName}}</p>
+
+          <ul  *ngIf="filter.expanded==true" class="collapse" id="collapseExample">
+            <li *ngFor="let filterOption of filter.filterOptions;let j=index" class="listOptions">
+
+              <div class="row">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 subFilters">
+                  <input (change)="filterOptionSelected(i,j,$event)" [(ngModel)]="filter.filterChecked[j]" type="checkbox" value='{{filterOption}}'  autocomplete="off">
+                </div>
+                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 subFilters" >
+                 <p > {{filterOption}}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+        <hr />
+    </div>
+
+  </div>
+
+
+</div>

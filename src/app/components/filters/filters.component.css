@@ -1,0 +1,26 @@
+/* .fa-minus{
+  display:none;
+} */
+.fa{
+  font-size: 13px;
+  color: black;
+}
+
+.btn-primary {
+  color: black;
+  background-color: white;
+border-color:white;
+margin-top: -7px;
+}
+.collapse{
+  display:block !important;
+
+}
+
+.listOptions{
+  list-style: none;
+}
+
+.subFilters{
+  padding:0px;
+}

@@ -1,0 +1,92 @@
+<div class="container-fluid" >
+
+  <div class="row" >
+
+  <div class="card" style="width:auto">
+    <div class="card-body">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="position: fixed;z-index: 200000;">
+
+
+      <div class="row">
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2" >
+          <p>Total Results found: {{filteredResult}}</p>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3" >
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4" >
+              <label> SORT BY:</label>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6" >
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{default}}
+                </button>
+                <div >
+                <div class="dropdown-menu"  aria-labelledby="dropdownMenuButton" >
+                  <a class="dropdown-item" (click)="dropdownSelect(dropdownItem)" *ngFor="let dropdownItem of sortCategories" href="#">
+                    {{dropdownItem}}  <hr style="margin-top: 0px;margin-bottom: 0px;" />
+
+                  </a>
+
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4" >
+          <input id="searchedText" type="text" placeholder="Search any Item" (change)="input($event)" [(ngModel)]="searched">
+        </div>
+
+      </div>
+
+    </div>
+    </div>
+    </div>
+  </div>
+
+
+  <div class="row" >
+    <div style="margin-top: 139px;" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" *ngFor="let drink of alldrinks">
+
+      <div class="row" >
+        <div *ngFor="let d of drink['0']" style="    margin-bottom: 81px;">
+        <div class="col-xl-4 col-lg-4 col-md-3 col-sm-6 col-6" >
+          <img style="cursor:pointer" (click)="getCocktailDetail(d['idDrink'])" class="image" alt="" src="{{d['strDrinkThumb']}}">
+          </div>
+
+          <div class="row" >
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="text-align: center;">
+
+              <div class="contentHolder">
+              <div class="brand"> {{d['strDrink']}}
+
+              </div>
+
+            </div>
+            </div>
+          </div>
+          <div class="row" >
+            <div  class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="text-align: center;">
+
+              <div class="contentHolder">
+
+              <div class="name">Id- {{d['idDrink']}}
+
+              </div>
+
+            </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
